@@ -13,7 +13,7 @@ def divide_char_type(document, concat_conj_in_ja=True):
     re_point = re.compile("[.．。!?！？]") # 句点の正規表現
     re_break = re.compile("\r?\n")   # 段落の正規表現
     re_empty = re.compile("[^A-Za-zＡ-Ｚａ-ｚ0-9０-９ぁ-んァ-ヴ一-龠々ー～.,，、．。　\s]")            # 上記以外の正規表現    
-    re_word = re.compile("[a-zA-ZＡ-Ｚａ-ｚ0-9０-９ぁ-んァ-ヴー一-龠々][a-zA-Z0-9ぁ-んァ-ヴ一-龠々ー～・'&.,]*$")
+    re_word = re.compile("[a-zA-ZＡ-Ｚａ-ｚ0-9０-９ぁ-んァ-ヴー一-龠々][a-zA-ZＡ-Ｚａ-ｚ0-9０-９ぁ-んァ-ヴ一-龠々ー～・'&.,]*$")
 
     text1 = document  # 全文
     text2 = re.split(re_break, text1)   # 段落単位
