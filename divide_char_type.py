@@ -41,32 +41,32 @@ def divide_char_type(document, concat_conj_in_ja=True):
             # 平仮名の場合
             if re_kana.match(i) is not None:
                 allwords.append(i)          # 分割語の追加
-                list_kana_words.append(i)   # 分割語長の追加
+                list_kana_words.append(i)   # 平仮名リストへの追加
                 tmp_char_class = "kana"     # 現在の文字の字種
             # カタカナの場合
             elif re_kata.match(i) is not None:
                 allwords.append(i)          # 分割語の追加
-                list_kata_words.append(i)   # 分割語長の追加
+                list_kata_words.append(i)   # カタカナリストへの追加
                 tmp_char_class = "kata"     # 現在の文字の字種
             # 漢字の場合
             elif re_cjk.match(i) is not None:
                 allwords.append(i)          # 分割語の追加
-                list_cjk_words.append(i)    # 分割語長の追加
+                list_cjk_words.append(i)    # 漢字リストへの追加
                 tmp_char_class = "cjk"      # 現在の文字の字種
             # アルファベットの場合
             elif re_alpha.match(i) is not None:
                 allwords.append(i)          # 分割語の追加
-                list_alpha_words.append(i)  # 分割語長の追加
+                list_alpha_words.append(i)  # アルファベットリストへの追加
                 tmp_char_class = "alpha"    # 現在の文字の字種
             # 数字の場合
             elif re_digit.match(i) is not None:
                 allwords.append(i)          # 分割語の追加
-                list_digit_words.append(i)  # 分割語長の追加
+                list_digit_words.append(i)  # 数字リストへの追加
                 tmp_char_class = "digit"    # 現在の文字の字種
             # それ以外の場合
             else:
                 allwords.append(i)          # 分割語の追加
-                list_other_words.append(i)
+                list_other_words.append(i)  # その他リストへの追加
                 tmp_char_class = None       # 現在の文字の字種
             firstloop = False
             continue
