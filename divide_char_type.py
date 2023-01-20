@@ -30,8 +30,6 @@ def divide_char_type(document, concat_conj_in_ja=True):
     end_period = ["e.g", "u.s", "u.s.a"]
 
     allwords = []   # 分割語リスト
-    tmp_char_class = None   # 一つ前の文字の字種
-    conj = None             # 接続記号
 
     firstloop = True
 
