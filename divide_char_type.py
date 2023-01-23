@@ -165,10 +165,6 @@ def divide_char_type(document, concat_conj_in_ja=True):
                         list_digit_words[-1] += conj
                     list_other_words.append(i)  # その他リストへの追加
                 else:
-                    del allwords[-1]
-                    del list_other_words[-1]
-                    allwords.append(conj)          # 分割語の追加
-                    list_other_words.append(conj)  # その他リストへの追加
                     allwords[-1] += i              # 分割後の結合
                     list_other_words[-1] += i      # その他リストへの結合
                 tmp_char_class = None       # 現在の文字の字種
