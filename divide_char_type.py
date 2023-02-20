@@ -9,13 +9,13 @@ def divide_char_type(document, concat_conj_in_ja=True):
     re_cjk = re.compile("[一-龠々]")             # 漢字の正規表現
     re_alpha = re.compile("[A-Za-zＡ-Ｚａ-ｚ]")  # アルファベットの正規表現
     re_digit = re.compile("[0-9０-９]")          # 数字の正規表現
-    re_punc = re.compile("[,，][^0-9０-９]|[^0-9０-９][,，]|、")  # 読点の正規表現
-    re_point = re.compile("[.．。!?！？]")                        # 句点の正規表現
-    re_break = re.compile("\r?\n")                                # 段落の正規表現
-    re_word = re.compile("[a-zA-ZＡ-Ｚａ-ｚ0-9０-９ぁ-ゖァ-ヶｦ-ｯｱ-ﾝー一-龠々][a-zA-ZＡ-Ｚａ-ｚ0-9０-９ぁ-ゖァ-ヶｦ-ｯｱ-ﾝ一-龠々ー～・'&.,]*$")
+    #re_punc = re.compile("[,，][^0-9０-９]|[^0-9０-９][,，]|、")  # 読点の正規表現
+    #re_point = re.compile("[.．。!?！？]")                        # 句点の正規表現
+    #re_break = re.compile("\r?\n")                                # 段落の正規表現
+    #re_word = re.compile("[a-zA-ZＡ-Ｚａ-ｚ0-9０-９ぁ-ゖァ-ヶｦ-ｯｱ-ﾝー一-龠々][a-zA-ZＡ-Ｚａ-ｚ0-9０-９ぁ-ゖァ-ヶｦ-ｯｱ-ﾝ一-龠々ー～・'&.,]*$")
 
     text1 = document  # 全文
-    text2 = re.split(re_break, text1)   # 段落単位
+    #text2 = re.split(re_break, text1)   # 段落単位
 
     list_kana_words = []   # 平仮名の分割語リスト
     list_kata_words = []   # カタカナの分割語リスト
@@ -27,7 +27,7 @@ def divide_char_type(document, concat_conj_in_ja=True):
     tmp_char_class = None  # 一つ前の文字の字種
     conj = None            # 接続記号
     conjlist = {".", "&", "．", "＆"}   # 接続記号の一覧
-    end_period = ["e.g", "u.s", "u.s.a"]
+    end_period = {"e.g", "u.s", "u.s.a"}
 
     allwords = []   # 分割語リスト
 
