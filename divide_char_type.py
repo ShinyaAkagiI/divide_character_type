@@ -29,7 +29,8 @@ def divide_char_type(document, concat_conj_in_ja=True):
     conjlist = {".", "&", "．", "＆"}   # 接続記号の一覧
     end_period = {"e.g", "u.s", "u.s.a"}
 
-    allwords = []   # 分割語リスト
+    allwords = []       # 分割語リスト
+    allwords_type = []  # 分割語リストの字種（0:平仮名、1:カタカナ、2:漢字、3:アルファベット、4:数字、5:その他）
 
     # 1文字目の処理
     # 平仮名の場合
@@ -363,10 +364,31 @@ def divide_char_type(document, concat_conj_in_ja=True):
                 list_other_words[-1] += i   # その他リストへの追加
                 tmp_char_class = None       # 現在の文字の字種
 
-    # 戻り値（字種分割語リスト、平仮名連リスト，カタカナ連リスト，漢字連リスト，
-    #         アルファベット連リスト，数字連リスト，その他連リスト）
-    return (allwords, list_kana_words, list_kata_words, list_cjk_words,
-            list_alpha_words, list_digit_words, list_other_words)
+    for i in allwords:
+        # 平仮名の場合
+        if re_kana.match(i[0]) is not None:
+            allwords_type.append(0)
+        # カタカナの場合
+        elif re_kata.match(i[0]) is not None:
+            allwords_type.append(1)
+        # 漢字の場合
+        elif re_cjk.match(i[0]) is not None:
+            allwords_type.append(2)
+        # アルファベットの場合
+        elif re_alpha.match(i[0]) is not None:
+            allwords_type.append(3)
+        # 数字の場合
+        elif re_digit.match(i[0]) is not None:
+            allwords_type.append(4)
+        # それ以外の場合
+        else:
+            allwords_type.append(5)
+
+    # 戻り値（字種分割語リスト、字種分割語字種タイプリスト、
+    #         平仮名連リスト、カタカナ連リスト、漢字連リスト、
+    #         アルファベット連リスト、数字連リスト、その他連リスト）
+    return (allwords, allwords_type, list_kana_words, list_kata_words,
+            list_cjk_words, list_alpha_words, list_digit_words, list_other_words)
 
 
 ############################
