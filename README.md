@@ -74,7 +74,15 @@ print(data[0])
 ![](calc_implementation_time.png)
 
 
+# 論文
+
+赤木信也：字種分割ツールの開発と公開,  
+情報処理学会第85回全国大会講演論文集 2023 (1), 29-30, 2023-02-16  
+https://cir.nii.ac.jp/crid/1050579753470466176  
+
 # ライセンス
 
-divide_char_type: Python Software Foundation License  
+- divide_char_type
+	- Python Software Foundation License  
+	- Copyright (C) 2023-2024 Shinya Akagi
 
