@@ -200,7 +200,7 @@ def divide_char_type(document, concat_conj_in_ja=True):
         # 一つ前がカタカナ
         elif tmp_char_class == "kata":
             # カタカナの場合
-            if re_kata.match(i) is not None or i == "-":
+            if re_kata.match(i) is not None or i == "-" or i == "ｰ":
                 allwords[-1] += i           # 分割語の結合
                 list_kata_words[-1] += i    # カタカナリストへの結合
             # 平仮名の場合
