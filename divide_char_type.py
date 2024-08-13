@@ -7,12 +7,12 @@ def divide_char_type(document, concat_conj_in_ja=True):
     re_kana = re.compile("[ぁ-ゖー～]")          # 平仮名の正規表現
     re_kata = re.compile("[ァ-ヶｦ-ｯｱ-ﾝー～]")    # カタカナの正規表現
     re_cjk = re.compile("[一-龠々]")             # 漢字の正規表現
-    re_alpha = re.compile("[A-Za-zＡ-Ｚａ-ｚ]")  # アルファベットの正規表現
+    re_alpha = re.compile("[A-Za-zÀ-ÖÙ-öù-ÿＡ-Ｚａ-ｚ]")  # アルファベットの正規表現
     re_digit = re.compile("[0-9０-９]")          # 数字の正規表現
     #re_punc = re.compile("[,，][^0-9０-９]|[^0-9０-９][,，]|、")  # 読点の正規表現
     #re_point = re.compile("[.．。!?！？]")                        # 句点の正規表現
     #re_break = re.compile("\r?\n")                                # 段落の正規表現
-    #re_word = re.compile("[a-zA-ZＡ-Ｚａ-ｚ0-9０-９ぁ-ゖァ-ヶｦ-ｯｱ-ﾝー一-龠々][a-zA-ZＡ-Ｚａ-ｚ0-9０-９ぁ-ゖァ-ヶｦ-ｯｱ-ﾝ一-龠々ー～・'&.,]*$")
+    #re_word = re.compile("[a-zA-ZÀ-ÖÙ-öù-ÿＡ-Ｚａ-ｚ0-9０-９ぁ-ゖァ-ヶｦ-ｯｱ-ﾝー一-龠々][a-zA-ZＡ-Ｚａ-ｚ0-9０-９ぁ-ゖァ-ヶｦ-ｯｱ-ﾝ一-龠々ー～・'&.,]*$")
 
     text1 = document  # 全文
     #text2 = re.split(re_break, text1)   # 段落単位
